@@ -1,4 +1,9 @@
-﻿using TMS.API.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using TMS.API.Exceptions;
+using static Microsoft.EntityFrameworkCore.EntityState;
+using Microsoft.Extensions.DependencyInjection;
+using TMS.API.Models;
+using TMS.API.Models.Dto;
 
 namespace TMS.API.Repositories
 {
@@ -11,14 +16,16 @@ namespace TMS.API.Repositories
             _dbContext = new TicketManagementSystemContext();
         }
 
-        public int Add(Order @order)
+        public OrderDto Add(OrderDto orderDto)
         {
-            throw new NotImplementedException();
+            var order = _dbContext.Add(orderDto);
+            _dbContext.SaveChanges();
+            return order.Entity;
         }
 
-        public void Delete(Order @order)
+        public void Delete(Order order)
         {
-            _dbContext.Remove(@order);
+            _dbContext.Remove(order);
             _dbContext.SaveChanges();
         }
 
@@ -30,14 +37,15 @@ namespace TMS.API.Repositories
 
         public async Task<Order> GetById(long id)
         {
-            var @order= _dbContext.Orders.Where(e => e.OrderId == id).FirstOrDefault();
+            var orders= await _dbContext.Orders.Where(e => e.OrderId == id).FirstOrDefaultAsync();
+            return orders;
 
-            return @order;
         }
 
-        public void Update(Order @order)
+        public void Update(Order order)
         {
-            throw new NotImplementedException();
+            _dbContext.Entry(order).State = EntityState.Modified;
+            _dbContext.SaveChanges();
         }
     }   
 
