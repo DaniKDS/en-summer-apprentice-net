@@ -1,7 +1,7 @@
 
-
 using System.Text.Json.Serialization;
 using TMS.API.Repositories;
+using TMS.API.Servicies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,8 +14,11 @@ builder.Services.AddSwaggerGen();
 
 //builder.Services.AddTransient<IEventRepository, EventRepository>();
 builder.Services.AddTransient<IOrderRepository, OrderRepository>();
-builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+builder.Services.AddTransient<IEventRepository, EventRepository>();
+//builder.Services.AddSingleton<ITestService, TestService>();
 
+builder.Services.AddControllers().AddJsonOptions(x => x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

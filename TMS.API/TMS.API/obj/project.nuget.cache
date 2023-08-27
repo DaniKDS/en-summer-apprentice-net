@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "RatRQoT+8xjvS03BtHwyNojrqqf4+hRsWoqWgsEKO7XIxsXMVftLFfrdw8hVTFh3eSicfIGWtQSxnIcZLC+mvw==",
+  "dgSpecHash": "cUAzS6fyaLJjfJNe8wN3ANGAa3khUBxl+DgkU1ypXOBxmjN/uQzVLLcmCcc++lYIRdrhdLYJwnrtq81A6mCaTw==",
   "success": true,
   "projectFilePath": "D:\\work\\.NET\\en-summer-apprentice-net\\TMS.API\\TMS.API\\TMS.API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\cordi\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\cordi\\.nuget\\packages\\automapper.collection\\9.0.0\\automapper.collection.9.0.0.nupkg.sha512",
+    "C:\\Users\\cordi\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\cordi\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\cordi\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\cordi\\.nuget\\packages\\castle.core\\5.1.0\\castle.core.5.1.0.nupkg.sha512",

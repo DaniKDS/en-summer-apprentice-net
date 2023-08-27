@@ -5,12 +5,10 @@
         public int OrderId { get; set; }
         public int CustomerId { get; set; }
         public int TicketCategoryId { get; set; }
+        public string CustomerName { get; set; }
         public DateTime? OrderedAt { get; set; }
         public int NumberOfTickets { get; set; }
-
-        public  Customer? Customer { get; set; }
-
-        public virtual TicketCategory? TicketCategory { get; set; }
+        public float TotalPrice { get; set; }
 
     }
 }

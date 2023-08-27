@@ -1,17 +1,18 @@
 ﻿using TMS.API.Models;
+using TMS.API.Models.Dto;
 
 namespace TMS.API.Repositories
 {
     public interface IOrderRepository
     {
-        IEnumerable<Order> GetAll();
+        public IEnumerable<Order> GetAll();
 
-        Task<Order> GetById(long id);
+        public Task<Order> GetById(long id);
 
-        int Add(Order @order);
+        public OrderDto Add(OrderDto orderDto);
 
-        void Update(Order @order);
+        public void Update(Order order);
 
-        void Delete(Order @order);
+        public void Delete(Order order);
     }
 }
